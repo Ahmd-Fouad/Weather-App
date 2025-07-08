@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="CSS/all.min.css">
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/media.css">
+</head>
+
+<body>
+  <div id="spinner" class="spinner d-flex justify-content-center align-items-center">
+
+    <span class="loader"></span>
+  </div>
+
+  <div class="page container-fluid d-flex gap-4 pb-3 pb-lg-0">
+    <aside class="flex-shrink-0">
+      <div class="icon text-center">
+        <i class="fa-solid fa-cloud"></i>
+        <p class="m-0 mt-1">Weather</spa>
+      </div>
+      <ul class="nav d-flex flex-column">
+        <li class="active">
+          <a href="#">
+            <i class="fa-solid fa-house"></i>
+            <span>home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>news</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-camera"></i>
+            <span>live cameras</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-image"></i>
+            <span>photo</span>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <i class="fa-solid fa-address-card"></i>
+            <span>contact</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="row flex-grow-1">
+      <div class="left-side col-12 col-lg-8">
+        <div class="inner">
+          <form class="position-relative">
+            <input type="text" name="city" id="search" placeholder="Search for a city..." class="rounded-pill ps-4">
+            <button id="btn">Search</button>
+          </form>
+          <div
+            class="today my-5 my-lg-3 d-flex justify-content-between align-items-center px-5 flex-column flex-sm-row row-gap-4 text-center text-sm-start">
+            <div class="temp-info d-flex flex-column">
+              <h2 class="text-capitalize fw-bold" id="city"></h2>
+              <p class="text-capitalize d-flex justify-content-between "><span id="day-name"></span><span
+                  id="day-date"></span></p>
+              <h3 class="fw-bold" id="temp-now"></h3>
+            </div>
+            <div class="temp-icon d-flex flex-column text-center">
+              <img id="weather-img" src="https://cdn.weatherapi.com/weather/64x64/night/296.png" alt="">
+              <span id="weather-desc">sunny</span>
+            </div>
+          </div>
+          <div class="hourly p-3">
+            <h4 class="fs-6 text-uppercase mb-md-3 mb-4">today's forecast</h4>
+            <div class="row g-2 g-xl-3 g-xxl-4 row-cols-lg-6 row-cols-sm-3 row-cols-1">
+              <div class="col">
+                <div class="inner py-2 d-flex flex-column text-center">
+                  <span class="text-uppercase"></span>
+                  <img src="" alt="temp-icon">
+                  <h3 class="fw-bold"></h3>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inner py-2 d-flex flex-column text-center">
+                  <span class="text-uppercase"></span>
+                  <img src="" alt="temp-icon">
+                  <h3 class="fw-bold"></h3>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inner py-2 d-flex flex-column text-center">
+                  <span class="text-uppercase"></span>
+                  <img src="" alt="temp-icon">
+                  <h3 class="fw-bold"></h3>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inner py-2 d-flex flex-column text-center">
+                  <span class="text-uppercase"></span>
+                  <img src="" alt="temp-icon">
+                  <h3 class="fw-bold"></h3>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inner py-2 d-flex flex-column text-center">
+                  <span class="text-uppercase"></span>
+                  <img src="" alt="temp-icon">
+                  <h3 class="fw-bold"></h3>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inner py-2 d-flex flex-column text-center">
+                  <span class="text-uppercase"></span>
+                  <img src="" alt="temp-icon">
+                  <h3 class="fw-bold"></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="air-cond mt-2 p-3">
+            <h4 class="fs-6 text-uppercase mb-md-3 mb-4">air conditions</h4>
+            <div class="row text-start gy-4 row-cols-2">
+              <div class="col">
+                <h5 class="text-capitalize fs-6">
+                  <i class="fa-solid pe-1 fa-temperature-half"></i>
+                  <span>real feel</span>
+                </h5>
+                <h3 id="real-feel" class="special fs-5 m-0 fw-bold"></h3>
+              </div>
+              <div class="col">
+                <h5 class="text-capitalize fs-6">
+                  <i class="fa-solid pe-1 fa-wind"></i>
+                  <span>wind</span>
+                </h5>
+                <h3 id="wind" class="fs-5 m-0 fw-bold"></h3>
+              </div>
+              <div class="col">
+                <h5 class="text-capitalize fs-6">
+                  <i class="fa-solid pe-1 fa-droplet"></i>
+                  <span>humidity</span>
+                </h5>
+                <h3 id="humidity" class="fs-5 m-0 fw-bold"></h3>
+              </div>
+              <div class="col">
+                <h5 class="text-capitalize fs-6">
+                  <i class="fa-solid pe-1 fa-snowflake"></i>
+                  <span>UV Index</span>
+                </h5>
+                <h3 id="uv-index" class="fs-5 m-0 fw-bold"></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-side col-12 col-lg-4">
+        <div class="inner p-3 ">
+          <h4 class="fs-6 text-uppercase mb-4">7-day forecast</h4>
+          <div class="days d-flex flex-column gap-3">
+            <div class="day d-flex justify-content-between align-items-center text-capitalize">
+              <span class="text-capitalize"></span>
+              <span class="d-flex align-items-center flex-lg-column flex-xl-row">
+                <img src="" alt="weather-icon">
+                <span></span>
+              </span>
+              <span>
+                <span></span> / <span></span>
+              </span>
+            </div>
+            <div class="day d-flex justify-content-between align-items-center text-capitalize">
+              <span class="text-capitalize"></span>
+              <span class="d-flex align-items-center flex-lg-column flex-xl-row">
+                <img src="" alt="weather-icon"> <span></span>
+              </span>
+              <span>
+                <span></span> / <span></span>
+              </span>
+            </div>
+            <div class="day d-flex justify-content-between align-items-center text-capitalize">
+              <span class="text-capitalize"></span>
+              <span class="d-flex align-items-center flex-lg-column flex-xl-row">
+                <img src="" alt="weather-icon">
+                <span></span>
+              </span>
+              <span>
+                <span></span> / <span></span>
+              </span>
+            </div>
+            <div class="day d-flex justify-content-between align-items-center text-capitalize">
+              <span class="text-capitalize"></span>
+              <span class="d-flex align-items-center flex-lg-column flex-xl-row">
+                <img src="" alt="weather-icon">
+                <span></span>
+              </span>
+              <span>
+                <span></span> / <span></span>
+              </span>
+            </div>
+            <div class="day d-flex justify-content-between align-items-center text-capitalize">
+              <span class="text-capitalize"></span>
+              <span class="d-flex align-items-center flex-lg-column flex-xl-row">
+                <img src="" alt="weather-icon">
+                <span></span>
+              </span>
+              <span>
+                <span></span> / <span></span>
+              </span>
+            </div>
+            <div class="day d-flex justify-content-between align-items-center text-capitalize">
+              <span class="text-capitalize"></span>
+              <span class="d-flex align-items-center flex-lg-column flex-xl-row">
+                <img src="" alt="weather-icon">
+                <span></span>
+              </span>
+              <span>
+                <span></span> / <span></span>
+              </span>
+            </div>
+            <div class="day d-flex justify-content-between align-items-center text-capitalize">
+              <span class="text-capitalize"></span>
+              <span class="d-flex align-items-center flex-lg-column flex-xl-row">
+                <img src="" alt="weather-icon">
+                <span></span>
+              </span>
+              <span>
+                <span></span> / <span></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="JS/main.js"></script>
+</body>
+
+</html>

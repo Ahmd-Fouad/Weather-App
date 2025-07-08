@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="CSS/all.min.css">
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/media.css">
+</head>
+
+<body>
+  <div class="page container-fluid d-flex gap-4 pb-3 pb-lg-0">
+    <aside class="flex-shrink-0">
+      <div class="icon text-center">
+        <i class="fa-solid fa-cloud"></i>
+        <p class="m-0 mt-1">Weather</spa>
+      </div>
+      <ul class="nav d-flex flex-column">
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>news</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-camera"></i>
+            <span>live cameras</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-image"></i>
+            <span>photo</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="contact.html">
+            <i class="fa-solid fa-address-card"></i>
+            <span>contact</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="pb-3">
+      <div class="contacts flex-grow-1 gap-3 d-flex flex-column flex-lg-row pt-lg-5 pt-4 pe-3 row-gap-5">
+        <div class="location col-12 col-lg-6 d-flex flex-column pe-xl-4 pe-md-2">
+          <h2>Find Us</h2>
+          <div class="inner w-100">
+            <div class="map">
+              <iframe class="w-100"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d27624.246473824867!2d31.388455949999997!3d30.06465135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1751736954909!5m2!1sen!2seg"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="about ps-3 pt-2">
+              <div class="d-flex align-items-center mb-3">
+                <i class="fa-solid fa-location-dot me-3 fs-3"></i>
+                <div class="text-capitalize">
+                  <p class="m-0">company name INC.</p>
+                  <p class="m-0">2083 avenue street los angeles</p>
+                </div>
+              </div>
+              <p class="mb-3 d-flex align-items-center">
+                <i class="fa-solid fa-phone me-3 fs-3"></i>
+                <span>+201016135303</span>
+              </p>
+              <p class="mb-3 d-flex align-items-center">
+                <i class="fa-solid fa-envelope me-3 fs-3"></i>
+                <span>info@companyname.com</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="info col-12 col-lg-6">
+          <h2 class="text-capitalize">contact us</h2>
+          <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur inventore
+            ducimus, facilis,
+            numquam id soluta omnis eius recusandae nesciunt vero repellat harum cum. Nisi facilis odit hic, ipsum sed!
+          </p>
+          <form class="mt-3">
+            <input type="text" placeholder="your name...">
+            <input type="text" placeholder="your email...">
+            <input type="text" placeholder="company name...">
+            <input type="text" placeholder="website...">
+            <textarea placeholder="message..."></textarea>
+            <button type="button">submit</button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="mt-5 p-3">
+        <div class="d-flex flex-column flex-lg-row align-items-center row-gap-4">
+          <form class="col-12 col-lg-8">
+            <input type="text">
+            <button type="button">subscribe</button>
+          </form>
+          <div class="links d-flex justify-content-center gap-3 col-12 col-lg-4 ps-3">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </div>
+        <p class="m-0 mt-5 pb-3 text-center fs-4">Designed by FO2SH. All rights reserved</p>
+      </footer>
+    </div>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,487 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #060c1a;
+  --second-color: #0e1421;
+  --third-color: #161d2ff4;
+  --font-color: #fff;
+  --font-color-two: #777;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--main-color);
+  min-height: 100vh;
+  padding-top: 16px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--main-color);
+  z-index: 9;
+  transition: 0.5s;
+}
+
+.spinner .loader {
+  transform: rotateZ(45deg);
+  perspective: 500px;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  color: var(--font-color);
+}
+
+.spinner .loader:before,
+.spinner .loader:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+
+.spinner .loader:after {
+  color: #013c90;
+  transform: rotateY(70deg);
+  animation-delay: .4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+
+  0%,
+  100% {
+    box-shadow: 0.5em 0px 0 0px currentcolor;
+  }
+
+  12% {
+    box-shadow: 0.5em 0.5em 0 0 currentcolor;
+  }
+
+  25% {
+    box-shadow: 0 0.5em 0 0px currentcolor;
+  }
+
+  37% {
+    box-shadow: -0.5em 0.5em 0 0 currentcolor;
+  }
+
+  50% {
+    box-shadow: -0.5em 0 0 0 currentcolor;
+  }
+
+  62% {
+    box-shadow: -0.5em -0.5em 0 0 currentcolor;
+  }
+
+  75% {
+    box-shadow: 0px -0.5em 0 0 currentcolor;
+  }
+
+  87% {
+    box-shadow: 0.5em -0.5em 0 0 currentcolor;
+  }
+}
+
+
+aside {
+  background-color: var(--second-color);
+  width: 180px;
+  height: calc(100vh - 28px);
+  border-radius: 10px;
+  padding: .625rem;
+  color: var(--font-color);
+  transition: 0.5s;
+  position: sticky;
+  top: 16px;
+}
+
+aside .icon {
+  margin-bottom: 5rem;
+  background-color: var(--third-color);
+  border-radius: .625rem;
+  padding: 0.5rem 0;
+}
+
+aside .icon p {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+aside .icon i {
+  font-size: 2rem;
+}
+
+aside .nav {
+  gap: 2.2rem;
+}
+
+aside .nav li {
+  opacity: 0.4;
+  transition: 0.3s;
+}
+
+aside .nav li.active,
+aside .nav li:hover {
+  opacity: 1;
+}
+
+aside .nav li i {
+  font-size: 1.5rem;
+}
+
+aside .nav li a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: inherit;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+aside .nav li a span {
+  transition: 0.5s;
+}
+
+
+main {
+  min-height: calc(100vh - 28px);
+}
+
+main :is(.left-side, .right-side) .inner {
+  min-height: 100%;
+  border-radius: 10px;
+}
+
+main .right-side .inner {
+  background-color: var(--second-color);
+}
+
+main .left-side input {
+  background-color: var(--second-color);
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.8rem;
+  color: var(--font-color);
+  border-radius: .5rem;
+  font-size: 1.125rem;
+}
+
+main .left-side input::placeholder {
+  color: var(--font-color-two);
+  font-size: 1rem;
+}
+
+main .left-side #btn {
+  border: 2px solid var(--third-color);
+  outline: none;
+  background-color: var(--second-color);
+  color: var(--font-color);
+  font-size: 1.1rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.3rem 1em;
+  border-radius: 100vh;
+  transition: 0.3s;
+}
+
+main .left-side #btn:hover {
+  background-color: var(--third-color);
+}
+
+main .left-side .today h2 {
+  font-size: 3rem;
+  color: var(--font-color);
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+main .left-side .today p {
+  color: var(--font-color);
+  font-size: 1.1rem;
+  margin-top: -5px;
+  padding-right: 8px;
+  padding-left: 5px;
+}
+
+main .left-side .today h3 {
+  font-size: 4rem;
+  color: var(--font-color);
+  margin: 0;
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+main .left-side .today h3::after {
+  content: "\f111";
+  font-family: "Font Awesome 6 Free";
+  font-size: 0.8rem;
+  position: absolute;
+  top: 5px;
+  font-weight: 500;
+}
+
+main .left-side .temp-icon img {
+  width: 150px;
+  margin-top: -1.5rem;
+}
+
+main .left-side .temp-icon span {
+  color: var(--font-color);
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-top: -0.5rem;
+}
+
+main .left-side :is(.hourly, .air-cond) {
+  background-color: var(--second-color);
+  border-radius: 10px;
+  color: var(--font-color);
+}
+
+main .left-side :is(.hourly, .air-cond) h4 {
+  color: var(--font-color-two);
+}
+
+main .left-side .hourly h3 {
+  position: relative;
+  font-size: 1.5rem;
+}
+
+main .left-side .hourly h3::after {
+  content: "\f111";
+  font-family: "Font Awesome 6 Free";
+  position: absolute;
+  font-size: 0.5rem;
+  top: 3px;
+  margin-left: 3px;
+  font-weight: 100;
+}
+
+main .left-side .hourly .row .col .inner {
+  background-color: var(--third-color);
+}
+
+main .left-side .hourly .row .col .inner span {
+  color: var(--font-color-two);
+}
+
+main .left-side .hourly .row .col img {
+  width: 58px;
+  margin: auto;
+}
+
+main .left-side .air-cond {
+  background-color: var(--second-color);
+}
+
+main .left-side .air-cond h5 {
+  color: var(--font-color-two);
+}
+
+main .left-side .air-cond h3.special {
+  position: relative;
+}
+
+main .left-side .air-cond h3.special::after {
+  content: "\f111";
+  font-family: "Font Awesome 6 Free";
+  position: absolute;
+  font-size: 0.5rem;
+  top: 3px;
+  margin-left: 3px;
+  font-weight: 100;
+}
+
+main .right-side h4 {
+  color: var(--font-color-two);
+}
+
+main .right-side .day {
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 10px;
+  color: var(--font-color);
+  background-color: var(--third-color);
+  padding: 1.61rem 0.8rem;
+  font-size: 1rem;
+  position: relative;
+}
+
+
+main .right-side .day>span:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+main .right-side .day>span:nth-child(3) span:nth-child(2) {
+  color: var(--font-color-two);
+}
+
+main .right-side .day img {
+  width: 55px;
+}
+
+.contacts :is(.info, .location) h2 {
+  font-size: 2.2rem;
+  color: var(--font-color);
+  margin-bottom: 1rem;
+}
+
+.contacts .location .inner {
+  background-color: var(--second-color);
+  color: var(--font-color-two);
+  border-radius: .625rem;
+  overflow: hidden;
+}
+
+.contacts .map iframe {
+  height: 325px;
+}
+
+.contacts .info>p {
+  color: var(--font-color-two);
+}
+
+.contacts .info form :is(input, textarea) {
+  width: 100%;
+  outline: none;
+  color: var(--font-color);
+  padding: 1rem;
+  border-radius: 100vh;
+  margin-bottom: 0.6rem;
+  background-color: var(--second-color);
+  transition: 0.3s;
+  border: 3px solid transparent;
+}
+
+.contacts .info form :is(input, textarea):is(:hover, :focus) {
+  border-color: var(--third-color);
+}
+
+.contacts .info form :is(input, textarea)::placeholder {
+  color: var(--font-color-two);
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.contacts .info form textarea {
+  border-radius: 1rem;
+  height: 120px;
+}
+
+.contacts .info form button,
+footer button {
+  border: 3px solid var(--third-color);
+  outline: none;
+  background-color: var(--second-color);
+  color: var(--font-color);
+  padding: 0.6rem 2.5rem;
+  border-radius: 100vh;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+
+footer {
+  background-color: var(--third-color);
+  border-radius: 10px;
+}
+
+footer form {
+  position: relative;
+}
+
+footer input {
+  width: 100%;
+  outline: none;
+  color: var(--font-color);
+  padding: 1rem;
+  border-radius: 100vh;
+  background-color: var(--second-color);
+  transition: 0.3s;
+  border: 3px solid transparent;
+}
+
+footer button {
+  position: absolute;
+  font-size: 1rem;
+  padding: 0.65rem 1.5rem;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+footer button:hover,
+.contacts .info form button:hover {
+  background-color: var(--third-color);
+}
+
+footer .links i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--second-color);
+  transition: 0.3s;
+  color: var(--font-color);
+  font-size: 1.3rem;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+footer .links i:hover {
+  background-color: var(--third-color);
+  border-color: var(--main-color);
+}
+
+footer p {
+  color: var(--font-color-two);
+}
