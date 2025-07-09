@@ -90,4 +90,50 @@
   main .right-side .day>span:nth-child(2) {
     margin-top: 0rem;
   }
+
+@media (min-width: 1400px) {
+  main .left-side .inner > div {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
 }
+  main .left-side .temp-info h2 {
+    padding-bottom: 1rem;
+  }
+  main .left-side .temp-info h3 {
+    margin-top: 1.5rem !important;
+  }
+  
+main .left-side .temp-icon img {
+    width: 180px;
+}
+
+   main .left-side .hourly {
+     margin-bottom: 2.8rem;
+   }
+
+  main .right-side .day span:first-child {
+    font-size: 1.1rem
+  }
+
+  main .left-side .hourly .row .col img {
+    padding: 1rem 0 ;
+  }
+
+  main .left-side .air-cond .row .col {
+        padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+  
+
+
+
