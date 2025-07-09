@@ -38,7 +38,7 @@ setTimeout(() => {
 
 async function getData(city) {
   try {
-    let req = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=83e311010753432981b135112250407&q=${city}&days=7`);
+    let req = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=83e311010753432981b135112250407&q=${city}&days=7`);
     let response = await req.json();
     localStorage.setItem("weather", JSON.stringify(response))
     curWeather(response);
